@@ -1,18 +1,37 @@
+<style>
+
+/* @import url("../css/cssm.css"); */
+@import "../css/cssm.css";
+</style>
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <div class="app">
+      <!-- 3.使用组件 -->
+        <MyHeader/>
+        <MyMain/>
+        <MyLoading/>
+         <MyFooter/>
+    </div>
 </template>
-
-<script lang="ts">
+<script lang="js">
+//1.引入组件
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
+import MyHeader from '../components/MyHeader.vue';
+import MyMain from '../components/MyMain.vue';
+import MyFooter from '../components/MyFooter.vue';
+import MyLoading from '../components/MyLoading.vue'
 @Component({
+  //2.注册组件
   components: {
-    HelloWorld,
-  },
+    MyHeader,
+    MyMain,
+    MyFooter,
+    MyLoading,
+  }
 })
-export default class Home extends Vue {}
+//export default class "组件名" extends Vue
+export default class Home extends Vue {
+  created() {
+     this.$store.state.isShowFooter = 1;
+  }
+}
 </script>
