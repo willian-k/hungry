@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        cookie: 0,
+        cookie: localStorage.getItem('username'),
         active: 0
     },
     mutations: {
