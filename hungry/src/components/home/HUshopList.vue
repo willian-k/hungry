@@ -1,12 +1,12 @@
 <template>
     <div>
-        <section class="NoDataTip-wrapper_1Gwf0tm" v-if="online()">
+        <section class="NoDataTip-wrapper_1Gwf0tm" v-if="!online()">
             <img src="//fuss10.elemecdn.com/d/60/70008646170d1f654e926a2aaa3afpng.png">
             <h3>没有结果</h3>
             <p>登录后查看更多商家</p>
             <button @click="toLogin">登录</button>
         </section>
-        <section class="shoplist" v-if="!online()">
+        <section class="shoplist" v-if="online()">
             <section
                 class="index-container_10L_lQb shop-0"
                 v-for="(item,index) of shopList"
@@ -173,6 +173,7 @@ export default {
     },
     components: {},
     created() {
+        this.online();
         this.getShopList();
     },
     mounted() {
