@@ -34,7 +34,7 @@
                 </li>
                 <li class="main-3Idiu">
                     <b>用户名</b>
-                    <span class="main-2cJz_" v-text="a"></span>
+                    <input type="text" class="main-2cJz_" contentEditable v-model="a" @blur="test1(a)">
                 </li>
             </ul>
             <h2 class="main-1OkSR">账号绑定</h2>
@@ -85,9 +85,9 @@ import "../components/info/html1.css";
 export default {
     data() {
         return {
-            a: localStorage.getItem("username"),
+            a: localStorage.getItem(localStorage.getItem("username"))?localStorage.getItem(localStorage.getItem("username")):localStorage.getItem("username"),
             b: localStorage.getItem("username"),
-            name: "my"
+            name: "my",
         };
     },
     methods: {
@@ -96,7 +96,18 @@ export default {
             this.$router.push({
                 name: this.name
             });
+        },
+        test1(b) {
+            localStorage.setItem(localStorage.getItem("username"),b);
         }
     }
 };
 </script>
+<style lang="scss" scoped>
+.main-2cJz_{
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+}
+</style>
+
