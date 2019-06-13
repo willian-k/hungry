@@ -5569,7 +5569,7 @@ ul.entityList-cartlist_1hnWi_0 {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 617px;
     width: 100%
 }
 
@@ -5623,7 +5623,7 @@ ul.entityList-cartlist_1hnWi_0 {
 }
 
 .foodpanel-foodname_1WIeM .foodpanel-content_1evFj {
-    font-size: .533333rem;
+    font-size:1.533333rem;
     font-weight: 700;
     width: 7.466667rem;
     width: 74.666667vw;
@@ -5640,6 +5640,7 @@ ul.entityList-cartlist_1hnWi_0 {
 }
 
 .foodpanel-foodsales_1RSMf {
+    text-align: left;
     font-size: .293333rem;
     color: #666;
     line-height: 1;
@@ -5954,5 +5955,7 @@ ul.entityList-cartlist_1hnWi_0 {
     margin-right: .16rem;
     margin-right: 1.6vw
 }
-
+.btn{
+    display: inline-block;
+}
 /*# sourceMappingURL=https://pages.elenet.me/perf-sentry-sourcemaps/h5/1559893191554/shop.2ffd824.css.map*/
