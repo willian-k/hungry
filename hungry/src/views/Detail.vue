@@ -16,6 +16,7 @@ export default {
   components: {
     DetailContent,
     DetailMore
-  }
+  },
+  
 };
 </script>

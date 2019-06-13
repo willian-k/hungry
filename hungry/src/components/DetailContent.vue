@@ -3,7 +3,7 @@
         <div class="app-dps8r">
             <div class="index-2guaN">
                 <nav class="index-2g0nR index-2TCKU index-3dvSM" style="background-image: url(https://fuss10.elemecdn.com/d/a4/6fa25d26362cdc7d1a6adac56d7abpng.png?imageMogr/format/webp/thumbnail/750x/&quot;);">
-                    <a href="javascript:;" class="index--iRT3"></a>
+                    <a href="http://localhost:8080" class="index--iRT3"></a>
                     <!---->
                 </nav>
                 <div class="index-ccm5A">
@@ -91,7 +91,7 @@
                                             </div>
                                             <!---->
                                         </dt>
-                                        <dd aria-label="月球煎饺，特，现价12元。" role="menuitem" v-for="(f,i) in item.foods" :key="i">
+                                        <dd aria-label="月球煎饺，特，现价12元。" role="menuitem" v-for="(f,i) in item.foods" :key="i" @click="toDetailMore(f)">
                                             <div data-v-425277ec="" class="fooddetails-root_2HoY2">
                                                 <span class="fooddetails-logo_2Q0S7">
                                                     <span class="attrTag-attrTag_2f7Ms_0 mini-tag-tag_1I2lF_0 fooddetails-attrTag_2TNes">新品
@@ -131,12 +131,14 @@
                                                         <span>
                                                             <!---->
                                                             <span class="cartbutton-entitybutton_9fUdS">
-                                                                <a href="javascript:" role="button" aria-label="删减商品" class="btns"><img src="../assets/reduce.png" alt=""></a>
-                                                                <span role="button" aria-label="已选1份" class="cartbutton-entityquantity_-YXiq buynum">
-                                                                    1
+                                                                <a href="javascript:" role="button" aria-label="删减商品" class="btns reduce" :data-plus-id="i" @click.stop="f.type=reduce(f.name,f.type,f.lowest_price)" v-if="f.type">
+                                                                    <img src="../assets/reduce.png" alt="">
+                                                                </a>
+                                                                <span role="button" aria-label="已选1份" class="cartbutton-entityquantity_-YXiq buynum" :data-commodity-num="i" v-text="f.type=f.type<0?0:f.type&&f.type>10?10:f.type" v-if="f.type">
+
                                                                 </span>
-                                                                <a href="javascript:" role="button" aria-label="添加商品" class="btns">
-                                                                    <img src="../assets/add.png" alt="">
+                                                                <a href=" javascript: " role="button " aria-label="添加商品 " class="btns " :data-reduce-id="i " @click.stop="f.type=plus(f.name,f.type,f.lowest_price)">
+                                                                    <img src="../assets/add.png" alt=" ">
                                                                 </a>
                                                             </span>
                                                         </span>
@@ -149,56 +151,53 @@
                                     </dl>
 
                                 </div>
-                                <div data-v-425277ec="">
-                                    <div class="specpanel-mask_1zC4L" style="display: none;"></div>
-                                    <div class="specpanel-root_QLZIb" style="display: none;">
+                                <div data-v-425277ec=" ">
+                                    <div class="specpanel-mask_1zC4L " style="display: none; "></div>
+                                    <div class="specpanel-root_QLZIb " style="display: none; ">
                                         <!---->
                                     </div>
                                 </div>
                                 <!---->
                             </section>
                         </main>
-                        <div z-index="10">
-                            <button type="button" class="index-essentialTip_vf4aS_0" style="display: none;">去点必选品</button>
-                            <footer class="cartview-cartview_m8q55">
-                                <div class="cartview-cartmask_39Pun" style="z-index: 10; display: none;"></div>
-                                <div class="cartview-cartbody_3QIXw" style="z-index: 11;">
-                                    <section class="discount-tip-discountTip_3QgtV_0">
-                                        <span style="color: #333333;">满20减1元，满40减4元，满60减8元</span>
+                        <div z-index="10 ">
+
+                            <footer class="cartview-cartview_m8q55 " style="position:relative;z-index:9999999999">
+                                <div class="cartview-cartmask_39Pun " style="z-index: 10; display: none; "></div>
+                                <div class="cartview-cartbody_3QIXw " style="z-index: 11; ">
+                                    <section class="discount-tip-discountTip_3QgtV_0 ">
+                                        <span style="color: #333333; ">满20减1元，满40减4元，满60减8元</span>
                                     </section>
-                                    <div style="opacity: 0;">
-                                        <div class="cartview-cartheader_1Wk12">
-                                            <div class="cartview-headerText_1pEZG">
+                                    <div style="opacity: 0; ">
+                                        <div class="cartview-cartheader_1Wk12 ">
+                                            <div class="cartview-headerText_1pEZG ">
                                                 <span>已选商品</span>
                                                 <!---->
                                                 <!---->
                                             </div>
-                                            <a href="javascript:" ubt-click="101179" class="cartview-cartheaderRemove_1Xg8n">
-                                                <svg>
-                                                    <use xlink:href="#cart-remove"></use>
-                                                </svg>
+                                            <a href="javascript: " ubt-click="101179 " class="cartview-cartheaderRemove_1Xg8n ">
                                                 <span>清空</span>
                                             </a>
                                         </div>
-                                        <div class="entityList-cartbodyScroller_nZp54_0">
+                                        <div class="entityList-cartbodyScroller_nZp54_0 ">
                                             <!---->
-                                            <ul class="entityList-cartlist_1hnWi_0"> </ul>
+                                            <ul class="entityList-cartlist_1hnWi_0 "> </ul>
                                             <!---->
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bottomNav-cartfooter_1Xb8t_0" style="z-index: 11;">
-                                    <span role="button" aria-label="购物车" attr-quantity="0" class="bottomNav-carticon_E1nII_0 bottomNav-empty_3zwfj_0">
+                                <div class="bottomNav-cartfooter_1Xb8t_0 " style="z-index: 11; ">
+                                    <span role="button " aria-label="购物车 " attr-quantity="0 " class="bottomNav-carticon_E1nII_0 bottomNav-empty_3zwfj_0 ">
                                         <!---->
                                     </span>
-                                    <div role="button" aria-label="购物车有商品0件，共0元，另需配送费1元。" class="bottomNav-cartInfo_3l5zP_0">
-                                        <p class="bottomNav-carttotal_1DJt5_0">
-                                            <span class="bottomNav-carttotalOriginal_2tu8R_0">未选购商品</span>
+                                    <div role="button " aria-label="购物车有商品0件，共0元，另需配送费1元。 " class="bottomNav-cartInfo_3l5zP_0 ">
+                                        <p class="bottomNav-carttotal_1DJt5_0 ">
+                                            <span :class="{'bottomNav-carttotalOriginal_2tu8R_0':total==0}" v-text="total!=0?'￥'+total:'未选购商品'"></span>
                                             <!---->
                                         </p>
-                                        <p class="bottomNav-cartdelivery_1TjrT_0">另需配送费1元</p>
+                                        <p class="bottomNav-cartdelivery_1TjrT_0 ">另需配送费1元</p>
                                     </div>
-                                    <a role="button" href="javascript:;" class="submit-btn-submitbutton_3t114_0 submit-btn-disabled_1DLSl_0">
+                                    <a role="button " href="javascript:; " class="submit-btn-submitbutton_3t114_0 submit-btn-disabled_1DLSl_0 ">
                                         <span>¥10起送</span>
                                     </a>
                                 </div>
@@ -210,18 +209,18 @@
             </div>
             <!---->
         </div>
-        <div class="index-AcI9j" style="display: none;">
-            <div class="Load-wrapper_3h35P-W index-2Djwj">
-                <div class="Load-loading-main_1LVs9py">
-                    <div class="Load-loading-icon_2LvpNhI"></div>
+        <div class="index-AcI9j " style="display: none; ">
+            <div class="Load-wrapper_3h35P-W index-2Djwj ">
+                <div class="Load-loading-main_1LVs9py ">
+                    <div class="Load-loading-icon_2LvpNhI "></div>
                 </div>
             </div>
         </div>
-        <div data-v-a153d4ac="" class="shop-info" style="display: none;">
+        <div data-v-a153d4ac=" " class="shop-info " style="display: none; ">
             <!---->
-            <section data-v-a153d4ac="" class="section">
-                <h3 class="section-title">配送信息</h3>
-                <div class="delivery-2eZxp">
+            <section data-v-a153d4ac=" " class="section ">
+                <h3 class="section-title ">配送信息</h3>
+                <div class="delivery-2eZxp ">
                     <div>
                         <!---->
                         <span>由商家配送提供配送，约42分钟送达，距离173m</span>
@@ -230,32 +229,32 @@
                     <div>配送费￥1</div>
                 </div>
             </section>
-            <section data-v-a153d4ac="" class="section">
-                <h3 class="section-title">商家服务</h3>
-                <div class="activity-34NE9">
-                    <div class="activity-1hPHa activity-25cwN">
-                        <span class="mini-tag-1Lyw4 activity-N5WvH" style="border: 1px solid rgb(153, 153, 153);">保
-                            <span class="activity-yP-9y mini-tag-1ezSQ" style="color: rgb(153, 153, 153);">保</span>
+            <section data-v-a153d4ac=" " class="section ">
+                <h3 class="section-title ">商家服务</h3>
+                <div class="activity-34NE9 ">
+                    <div class="activity-1hPHa activity-25cwN ">
+                        <span class="mini-tag-1Lyw4 activity-N5WvH " style="border: 1px solid rgb(153, 153, 153); ">保
+                            <span class="activity-yP-9y mini-tag-1ezSQ " style="color: rgb(153, 153, 153); ">保</span>
                         </span>
-                        <span class="activity-3dUjU">该商户食品安全已由国泰产险承担，食品安全有保障</span>
+                        <span class="activity-3dUjU ">该商户食品安全已由国泰产险承担，食品安全有保障</span>
                     </div>
                 </div>
             </section>
-            <section data-v-a153d4ac="" class="section album-3hu5e">
-                <h3 class="section-title">商家实景</h3>
-                <div class="album-3VrB9">
-                    <a href="javascript:"><img src="https://fuss10.elemecdn.com/4/cd/5bff4f5f7be1aec1381f1c5db7b5ejpeg.jpeg?imageMogr/format/webp/thumbnail/!200x200r/gravity/Center/crop/200x200/">
-                        <span class="album-3mg0R">门面(2张)</span>
+            <section data-v-a153d4ac=" " class="section album-3hu5e ">
+                <h3 class="section-title ">商家实景</h3>
+                <div class="album-3VrB9 ">
+                    <a href="javascript: "><img src="https://fuss10.elemecdn.com/4/cd/5bff4f5f7be1aec1381f1c5db7b5ejpeg.jpeg?imageMogr/format/webp/thumbnail/!200x200r/gravity/Center/crop/200x200/ ">
+                        <span class="album-3mg0R ">门面(2张)</span>
                     </a>
-                    <a href="javascript:"><img src="https://fuss10.elemecdn.com/1/62/4f58d6cbd64986f3e458aa953ca03jpeg.jpeg?imageMogr/format/webp/thumbnail/!200x200r/gravity/Center/crop/200x200/">
-                        <span class="album-3mg0R">大堂(3张)</span>
+                    <a href="javascript: "><img src="https://fuss10.elemecdn.com/1/62/4f58d6cbd64986f3e458aa953ca03jpeg.jpeg?imageMogr/format/webp/thumbnail/!200x200r/gravity/Center/crop/200x200/ ">
+                        <span class="album-3mg0R ">大堂(3张)</span>
                     </a>
                 </div>
             </section>
-            <div data-v-a153d4ac="">
-                <section class="section">
-                    <h3 class="section-title">商家信息</h3>
-                    <ul class="detail-3mz9N">
+            <div data-v-a153d4ac=" ">
+                <section class="section ">
+                    <h3 class="section-title ">商家信息</h3>
+                    <ul class="detail-3mz9N ">
                         <li>听说月球背面有许多的秘密哦！那我们一起去共同研究它吧！欢迎各位同学加入月球背面研究所，愿我们一起共同成长！</li>
                         <li>
                             <span>品类</span>
@@ -265,7 +264,7 @@
                             <span>商家电话</span>
                             <span>
                                 <span>18025187986</span>
-                                <span class="detail-3m0Xz"></span>
+                                <span class="detail-3m0Xz "></span>
                             </span>
                         </li>
                         <li>
@@ -278,9 +277,9 @@
                         </li>
                     </ul>
                 </section>
-                <section class="section">
-                    <a href="https://h5.ele.me/shop/certification/#/?restaurant_id=E9310301041011211393" class="section-title detail-XxlGz">营业资质
-                        <span class="detail-3m0Xz"></span>
+                <section class="section ">
+                    <a href="https://h5.ele.me/shop/certification/#/?restaurant_id=E9310301041011211393 " class="section-title detail-XxlGz ">营业资质
+                        <span class="detail-3m0Xz "></span>
                     </a>
                 </section>
             </div>
@@ -294,35 +293,55 @@ export default {
       shopListNav: [],
       shopList: [],
       num: 0,
-      rst: null
+      rst: null,
+      total: 0,
+      totalContainer: 0,
+      commodity: null,
     };
+  },
+  computed: {
+    sum() {
+      return this.$store.state.sum;
+    }
   },
   created() {
     this.getList(() => {});
+    (() => {
+      this.$store.state.total = this.total;
+      console.log(this.$store.state.total);
+    })();
+  },
+  watch: {
+    sum(oldNum,newNum){
+       this.updateTotal(oldNum)
+    }
   },
   mounted() {
     this.$nextTick(() => {
       setTimeout(() => {
         var scroller = document.querySelector(".scroller");
-        // console.log(scroller);
+        console.log(scroller);
         scroller.onscroll = e => {
-          //   console.log(scroller.scrollTop);
+          // console.log(scroller.scrollTop);
           this.jumpLevel();
         };
-      }, 800);
+      }, 3000);
     });
   },
   methods: {
+    updateTotal(sum){
+        this.total = sum
+    },
     async getList() {
       this.$store.state.loading += 1;
       const list = await this.$axios(
         `https://www.easy-mock.com/mock/5cf69ea7ecc71a7ce6a6ad8a/example/detail1`
       );
-      console.log(list);
+      //   console.log(list);
       this.$store.state.loading -= 1;
       this.shopList = [...this.shopList, ...list.data.menu];
       this.rst = list.data.rst;
-      //   console.log(this.shopList);
+      console.log(this.shopList);
     },
     getImg(img) {
       var houzhui = img.slice(-3);
@@ -380,9 +399,43 @@ export default {
           level[i].offsetTop + level[i].offsetHeight - 10
         ) {
           this.num = i;
+          //   console.log(scroller.scrollTop)
+          //   console.log(this.num)
           break;
         }
       }
+    },
+    plus(commodity, num, price) {
+      if (num < 10) {
+          console.log('if')
+        this.total = this.$store.state.sum;
+        num++;
+        console.log(num);
+        this.total -= -price;
+        this.total = this.total.toFixed(2);
+        this.$store.state.sum = this.total;
+        return num;
+      }else{
+          console.log('else')
+         return 10
+      }
+    },
+    reduce(commodity, num, price) {
+      if (num > 0) {
+        this.total = this.$store.state.sum;
+        num--;
+        this.total -= price;
+        this.total = this.total.toFixed(2);
+        this.$store.state.sum = this.total;
+        return num;
+      } else {
+        return 0;
+      }
+    },
+    toDetailMore(data) {
+      this.$store.state.dataObj = data;
+      this.$store.state.isAppearence = 1;
+      console.log(this.$store.state.dataObj);
     }
   }
 };
