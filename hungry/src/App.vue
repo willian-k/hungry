@@ -1,11 +1,7 @@
 <template>
     <div id="app">
-        <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-        </div>-->
-
         <router-view/>
+        <MyLoading/>
     </div>
 </template>
 
@@ -27,3 +23,12 @@
     transform: scale(2);
 }
 </style>
+<script>
+import Vue from "vue";
+import MyLoading from "./components/MyLoading";
+export default Vue.extend({
+    components: {
+        MyLoading
+    }
+});
+</script>
