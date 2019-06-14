@@ -11,6 +11,7 @@
                 class="index-container_10L_lQb shop-0"
                 v-for="(item,index) of shopList"
                 :key="index"
+                @click="goDetails"
             >
                 <div class="index-shopInfo_1RRTZ0d">
                     <div class="logo-container_XoH2Vit_0">
@@ -200,7 +201,7 @@ export default {
         reGetShopList() {
             let isok = true;
             window.onscroll = () => {
-                if (scrollY > this.$el.offsetHeight - 50) {
+                if (scrollY > this.$el.offsetHeight - 200) {
                     if (isok) {
                         isok = false;
                         setTimeout(() => {
@@ -210,6 +211,9 @@ export default {
                     }
                 }
             };
+        },
+        goDetails() {
+            window.open("detail/001", "_self");
         }
     }
 };

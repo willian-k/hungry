@@ -7,7 +7,6 @@
 
 <style lang="scss">
 @import "./assets/style/home/home.css";
-// @import "./assets/style/home/vue-swiper.css";
 @import "./assets/style/home/vendor.css";
 @import "./assets/style/iconfont.css";
 .index-wrapper_1Rsz2pX i {
